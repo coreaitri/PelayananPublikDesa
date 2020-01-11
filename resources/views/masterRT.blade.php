@@ -52,6 +52,8 @@
     <!-- Plugin js for this page -->
     <script src="{{ asset('vendors/typeahead.js/typeahead.bundle.min.js') }}"></script>
     <script src="{{ asset('vendors/select2/select2.min.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="{{ asset('js/off-canvas.js') }}"></script>
@@ -65,6 +67,12 @@
     <script src="{{ asset('js/typeahead.js') }}"></script>
     <script src="{{ asset('js/select2.js') }}"></script>
     <!-- End custom js for this page-->
+
+    <script>
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+        } );
+    </script>
 </body>
 
 

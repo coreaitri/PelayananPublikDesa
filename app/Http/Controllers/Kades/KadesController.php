@@ -157,8 +157,20 @@ class KadesController extends Controller
     public function suratMasuk()
     {
 
-        $surat = Surat::where('status', '=', 1)->latest()->get();
+        $surat = Surat::where('status', '=', 1)->orWhere('status', '=', 3)->latest()->get();
 
         return view('kades.dashboard.listSurat', ['data' => $surat]);
+    }
+
+    public function status(Request $request)
+    {
+        $surat                   = \App\Models\Surat::findOrFail($request->id);
+
+
+        $surat->status          = 3;
+
+
+        $surat->save();
+        return redirect()->route('kades.listSuratMasuk');
     }
 }

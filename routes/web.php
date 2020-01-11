@@ -35,6 +35,7 @@ Route::group(['prefix'  =>  'kades'], function () {
         Route::post('/updateRT/{id}', 'Kades\KadesController@update')->name('kades.updateRT');
         Route::get('/dataRTDelete/{id}', 'Kades\KadesController@destroy')->name('kades.deleteRT');
         Route::get('/listWarga', 'Kades\KadesController@indexWarga')->name('kades.listWarga');
+        Route::get('/statuslistSuratMasuk', 'Kades\KadesController@status')->name('kades.statusListSuratMasuk');
 
         Route::get('/listSuratMasuk', 'Kades\KadesController@suratMasuk')->name('kades.listSuratMasuk');
     });

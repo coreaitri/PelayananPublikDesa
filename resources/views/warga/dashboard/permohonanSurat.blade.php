@@ -35,14 +35,16 @@
                                 <td class="text-center">{{ $item ->tipe_surat}}</td>
                                 <td class="text-center">
                                     @if($item->status == 0)
-                                    <span class="badge badge-secondary">Surat belum dilihat RT</span>
+                                    <div class="badge badge-secondary">Surat belum dilihat RT</div>
                                     @elseif($item->status == 2)
-                                    <span class="badge badge-danger">Surat Tidak Disetujui RT. Silahkan Konfirmasi
-                                        Langsung
-                                        ke RT setempat.</span>
+                                    <div class="badge badge-danger">Surat Tidak Disetujui RT.</div><br><br> Silahkan
+                                    Konfirmasi Langsung ke RT setempat.
+                                    @elseif($item->status == 3)
+                                    <div class="badge badge-success">Surat Telah Disetujui Kades.</div><br><br> Silahkan
+                                    ambil surat anda ke kantor desa pada saat jam kerja
                                     @else
-                                    <div class="badge badge-success">Surat Telah Disetujui RT.</div> <br><br>
-                                    Silahkan Langsung Mengambil Surat Ke Kantor Kepala Desa Pada Saat Jam Kerja.
+                                    <div class="badge badge-info">Surat Telah Disetujui RT.</div> <br><br>
+                                    Silahkan Tunggu Konfirmasi dari kepala desa.
                                     @endif
                                 </td>
 

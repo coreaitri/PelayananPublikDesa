@@ -35,7 +35,7 @@ class WargaController extends Controller
     {
         $warga = Auth::user()->warga->id;
 
-        $surat = Surat::where('user_id', '=', $warga)->get();
+        $surat = Surat::where('user_id', '=', $warga)->latest()->get();
 
         return view('warga.dashboard.permohonanSurat', ['data' => $surat]);
     }
